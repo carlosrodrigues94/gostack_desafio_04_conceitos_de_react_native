@@ -25,6 +25,18 @@ export default function App() {
     setRepositories([response.data]);
   }
 
+  function setColorToTech(tech) {
+    if (tech === "NodeJs") {
+      return "#04d361";
+    }
+    if (tech === "React") {
+      return "#3498db";
+    }
+    if (tech === "C#") {
+      return "#f39c12";
+    }
+  }
+
   return (
     <>
       <StatusBar barStyle="light-content" backgroundColor="#7159c1" />
@@ -38,7 +50,15 @@ export default function App() {
 
               <View style={styles.techsContainer}>
                 {repository.techs.map((tech) => (
-                  <Text key={tech} style={styles.tech}>
+                  <Text
+                    key={tech}
+                    style={
+                      (styles.tech,
+                      {
+                        backgroundColor: setColorToTech(tech),
+                      })
+                    }
+                  >
                     {tech}
                   </Text>
                 ))}
@@ -73,12 +93,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#7159c1",
+    backgroundColor: "#444",
   },
   repositoryContainer: {
     marginBottom: 15,
     marginHorizontal: 15,
-    backgroundColor: "#fff",
+    backgroundColor: "#ddd",
+    borderRadius: 10,
     padding: 20,
   },
   repository: {
@@ -109,14 +130,21 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   button: {
+    borderRadius: 10,
     marginTop: 10,
+    borderWidth: 2,
+    borderColor: "#7159c1",
+    width: 90,
+    height: 30,
+    alignItems: "center",
+    justifyContent: "center",
   },
   buttonText: {
     fontSize: 14,
     fontWeight: "bold",
     marginRight: 10,
-    color: "#fff",
-    backgroundColor: "#7159c1",
-    padding: 15,
+    color: "#333",
+    backgroundColor: "#ddd",
+    borderRadius: 10,
   },
 });

@@ -10,6 +10,10 @@
 
 Interface Mobile nativa com React Native que lista repositórios para dar like e atualizar quantidade de likes no repositório em tempo real
 
+## 💅 Layout da aplicação
+
+<img src="./iphone_photo.png">
+
 ---
 
 Feito com 💜 Carlos Rodrigues
