@@ -12,7 +12,7 @@ Interface Mobile nativa com React Native que lista repositórios para dar like e
 
 ## 💅 Layout da aplicação
 
-<img src="./iphone_photo.png">
+<img src="./iphone_photo.png" width="300px">
 
 ---
 
